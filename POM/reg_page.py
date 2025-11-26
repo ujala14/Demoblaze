@@ -14,27 +14,19 @@ class reg_modal_class(BrowserUtils):
         self.signup_register_button = (By.CSS_SELECTOR, "button.btn-primary[onclick='register()']")
 
     def sign_up_modal(self):
-        self.driver.find_element(*self.nav_Sign_up_button).click()
-        
+        self.button_clicking(self.nav_Sign_up_button)
     
     def get_modal_heading(self):
-        heading_ele = self.wait_for_element(self.modal_heading, timeout=10)
-        return heading_ele.text
+        return self.get_text(self.modal_heading)
         
-    def is_element_visible(self, locator):
-        try:
-            WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located(locator))
-            return True
-        except:
-            return False
-    
-    
-    def is_clickable(self, locator):
-        try:
-            WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable(locator))
-            return True
-        except:
-            return False
+    def field_visible(self):
+        return self.is_visible(self.field_username) and self.is_visible(self.field_password)
+
+    def fileds_clickable(self):
+        return self.is_clickable(self.field_username) and self.is_clickable(self.field_password)
+  
+    def valid_reg_credentials_enter(self, username):
+        self.driver.find_element(self.field_username).send_keys(username)
     
        
         
