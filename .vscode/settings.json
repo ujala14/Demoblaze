@@ -1,0 +1,7 @@
+{
+    "python.testing.pytestArgs": [
+        "pytest_framework_package"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
+}
