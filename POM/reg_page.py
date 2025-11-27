@@ -1,7 +1,5 @@
 from selenium.webdriver.common.by import By
 from Utils.browsersutils import BrowserUtils
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 
 class reg_modal_class(BrowserUtils):
     def __init__(self, driver):
@@ -25,9 +23,17 @@ class reg_modal_class(BrowserUtils):
     def fileds_clickable(self):
         return self.is_clickable(self.field_username) and self.is_clickable(self.field_password)
   
-    def valid_reg_credentials_enter(self, username):
-        self.driver.find_element(self.field_username).send_keys(username)
-    
+  
+  #functional test cases of registeration/signup page
+    def valid_username(self, username):
+        self.clear_field(self.field_username)
+        self.send_keys(self.field_username,username)
+
+    def valid_password(self, password):
+        self.clear_field(self.field_password)
+        self.send_keys(self.field_password,password)
+       
+        
        
         
 

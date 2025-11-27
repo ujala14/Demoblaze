@@ -10,9 +10,11 @@ class BrowserUtils:
         return self.driver.title
     
     def wait_for_element(self, locator, timeout=15):
-        return WebDriverWait(self.driver, timeout).until(
-            EC.visibility_of_element_located(locator))
+        return WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located(locator))
     
+    def wait_for_alert(self, timeout=10):
+        return WebDriverWait(self.driver, timeout).until(EC.alert_is_present())
+
     def take_screenshot(self, filename=None):
         if filename is None:
             filename = f"screenshot_{int(time.time())}.png"
@@ -43,3 +45,7 @@ class BrowserUtils:
             return True
         except:
             return False
+        
+    def clear_field(self, locator, timeout=10):
+        field = WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located(locator))
+        field.clear()

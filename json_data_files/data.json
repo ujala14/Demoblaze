@@ -1,19 +1,49 @@
 {
-  "data" : [
+  "registration_test_cases": [
     {
-      "userEmail" : "uj",
-      "userPassword" : "learning",
-      "productName" : "Blackberry"
-
+      "id": 1,
+      "title": "Submit form with valid data",
+      "input": {
+        "username": "validyuser",
+        "password": "Valid_123"
+      },
+      "expected_result": "Sign up successful."
     },
-
     {
-      "userEmail" : "uj",
-      "userPassword" : "learning",
-      "productName" : "Samsung Note 8"
-
+      "id": 2,
+      "title": "Submit form with existing username",
+      "input": {
+        "username": "validyuser",
+        "password": "AnyPassword"
+      },
+      "expected_result": "This user already exist."
+    },
+    {
+      "id": 3,
+      "title": "Empty form submission",
+      "input": {
+        "username": "",
+        "password": ""
+      },
+      "expected_result": "Please fill out Username and Password."
+    },
+    {
+      "id": 4,
+      "title": "Username empty",
+      "input": {
+        "username": "",
+        "password": "SomePassword"
+      },
+      "expected_result": "Please fill out Username and Password."
+    },
+    {
+      "id": 5,
+      "title": "Password empty",
+      "input": {
+        "username": "SomeUser",
+        "password": ""
+      },
+      "expected_result": "Please fill out Username and Password."
     }
   ]
-
-
 }
