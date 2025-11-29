@@ -25,8 +25,9 @@ def test_sign_up_button_visible_and_clickable(open_sign_up_modal):
     assert open_sign_up_modal.is_visible(open_sign_up_modal.signup_register_button)
     assert open_sign_up_modal.is_clickable(open_sign_up_modal.signup_register_button)
 
-
-
+#Test 6: Verify password masking
+def test_password_mask(open_sign_up_modal):
+    assert open_sign_up_modal.password_masking_check() is True
     
 
 

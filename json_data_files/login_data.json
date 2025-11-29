@@ -1,0 +1,67 @@
+{
+  "login_test_cases": [
+    {
+      "id": 1,
+      "title": "Submit form with valid data",
+      "input": {
+        "username": "validyuser",
+        "password": "Valid_123"
+      },
+      "expected_result": ""
+    },
+    {
+      "id": 2,
+      "title": "Submit form without registeration",
+      "input": {
+        "username": "admin10",
+        "password": "AnyPassword"
+      },
+      "expected_result": ""
+    },
+    {
+      "id": 3,
+      "title": "wrong username",
+      "input": {
+        "username": "validyuser",
+        "password": "Valid_123"
+      },
+      "expected_result": ""
+    },
+    {
+      "id": 4,
+      "title": "wrong password",
+      "input": {
+        "username": "validyuser",
+        "password": "Valid_123"
+      },
+      "expected_result": ""
+    },
+    {
+      "id": 5,
+      "title": "Empty form submission",
+      "input": {
+        "username": "",
+        "password": ""
+      },
+      "expected_result": ""
+    },
+    {
+      "id": 6,
+      "title": "Username empty",
+      "input": {
+        "username": "",
+        "password": "SomePassword"
+      },
+      "expected_result": ""
+    },
+    {
+      "id": 7,
+      "title": "Password empty",
+      "input": {
+        "username": "SomeUser",
+        "password": ""
+      },
+      "expected_result": ""
+    }
+  ]
+},

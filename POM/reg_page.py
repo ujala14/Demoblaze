@@ -32,8 +32,15 @@ class reg_modal_class(BrowserUtils):
     def valid_password(self, password):
         self.clear_field(self.field_password)
         self.send_keys(self.field_password,password)
+
+    def form_reset_validation(self):
+        username_value = self.driver.find_element(*self.field_username).get_attribute("value")
+        password_value = self.driver.find_element(*self.field_password).get_attribute("value")
+        return {"username": username_value, "password": password_value}
+
        
-        
+    def password_masking_check(self):
+        return self.driver.find_element(*self.field_password).get_attribute("type") == "password"
        
         
 

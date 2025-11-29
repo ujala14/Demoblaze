@@ -2,6 +2,8 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from POM.reg_page import reg_modal_class
+from POM.login_page import login_modal_class
+
 
 #to copy driver lines in all codes
 @pytest.fixture(scope="function")
@@ -23,3 +25,12 @@ def open_sign_up_modal(driverInstance):
     register_modal.sign_up_modal()
     return register_modal
     
+@pytest.fixture
+def open_login_modal(driverInstance):
+    driver=driverInstance #all driver related code in conftest file
+    driver.get("https://www.demoblaze.com/")
+    driver.maximize_window()
+    driver.implicitly_wait(5) 
+    login = login_modal_class(driver)
+    login.login_modal()
+    return login
