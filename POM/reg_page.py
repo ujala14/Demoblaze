@@ -34,13 +34,12 @@ class reg_modal_class(BrowserUtils):
         self.send_keys(self.field_password,password)
 
     def form_reset_validation(self):
-        username_value = self.driver.find_element(*self.field_username).get_attribute("value")
-        password_value = self.driver.find_element(*self.field_password).get_attribute("value")
+        username_value = (driver).find_element(*self.field_username).get_attribute("value")
+        password_value = (driver).find_element(*self.field_password).get_attribute("value")
         return {"username": username_value, "password": password_value}
 
-       
     def password_masking_check(self):
-        return self.driver.find_element(*self.field_password).get_attribute("type") == "password"
+        return (driver).find_element(*self.field_password).get_attribute("type") == "password"
        
         
 

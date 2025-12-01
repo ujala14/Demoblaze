@@ -3,5 +3,9 @@
         "pytest_framework_package"
     ],
     "python.testing.unittestEnabled": false,
-    "python.testing.pytestEnabled": true
+    "python.testing.pytestEnabled": true,
+    "python.analysis.extraPaths": [
+        "./POM",
+        "./Utils"
+    ]
 }

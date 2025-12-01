@@ -26,7 +26,6 @@ class login_modal_class(BrowserUtils):
     def login_fileds_clickable(self):
         return self.is_clickable(self.field_username) and self.is_clickable(self.field_password)
   
-  
   #functional test cases of login page
     def valid_login_username(self, username):
         self.clear_field(self.field_username)
@@ -37,8 +36,8 @@ class login_modal_class(BrowserUtils):
         self.send_keys(self.field_password,password)
        
     def password_masking_check(self):
-        return self.driver.find_element(*self.field_password).get_attribute("type") == "password"
-       
+        return (driver).find_element(*self.field_password).get_attribute("type") == "password"
+
     def get_welcome_message(self):
         return self.get_text(self.welcome_msg)
 
@@ -50,3 +49,4 @@ class login_modal_class(BrowserUtils):
 
 
     
+

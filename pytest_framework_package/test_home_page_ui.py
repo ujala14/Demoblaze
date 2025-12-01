@@ -1,4 +1,3 @@
-import pytest
 import time
     
 # ===== TEST 1: Navbar =====
