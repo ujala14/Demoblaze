@@ -1,17 +1,17 @@
 #TEST 1: Verify login modal opens
 # functions taken from POM
 def test_login_modal(open_login_modal): 
-    assert open_login_modal.get_modal_heading() == "Sign up"
+    assert open_login_modal.get_login_modal_heading() == "Log in"
 
 #TEST 2: Verify Username and Password fields are visible
 # functions taken from POM
 def test_login_fields_are_visible(open_login_modal):
-    assert open_login_modal.field_visible()
+    assert open_login_modal.login_field_visible()
 
 #TEST 3: Verify Username and Password fields are clickabale
 # functions taken from POM
 def test_fields_are_clickable(open_login_modal):  
-    assert open_login_modal.fileds_clickable()
+    assert open_login_modal.login_fields_clickable()
 
 #Test 4: Verify Close button visible and clickable 
 # functions taken from utils

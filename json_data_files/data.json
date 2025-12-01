@@ -34,7 +34,7 @@
         "username": "",
         "password": "SomePassword"
       },
-      "expected_result": "Please fill out Username and Password."
+      "expected_result": "Please fill out Username"
     },
     {
       "id": 5,
@@ -43,7 +43,7 @@
         "username": "SomeUser",
         "password": ""
       },
-      "expected_result": "Please fill out Username and Password."
+      "expected_result": "Please fill out Password."
     }
   ]
 }

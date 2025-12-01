@@ -1,5 +1,5 @@
 {
-  "login_test_cases": [
+  "valid_login_cases": [
     {
       "id": 1,
       "title": "Submit form with valid data",
@@ -7,8 +7,11 @@
         "username": "validyuser",
         "password": "Valid_123"
       },
-      "expected_result": ""
-    },
+      "expected_result": "Welcome validyuser"
+    }
+    ],
+
+  "invalid_cases": [
     {
       "id": 2,
       "title": "Submit form without registeration",
@@ -16,7 +19,7 @@
         "username": "admin10",
         "password": "AnyPassword"
       },
-      "expected_result": ""
+      "expected_result": "User Doesn't exist"
     },
     {
       "id": 3,
@@ -25,7 +28,7 @@
         "username": "validyuser",
         "password": "Valid_123"
       },
-      "expected_result": ""
+      "expected_result": "Wrong username"
     },
     {
       "id": 4,
@@ -34,7 +37,7 @@
         "username": "validyuser",
         "password": "Valid_123"
       },
-      "expected_result": ""
+      "expected_result": "Wrong password."
     },
     {
       "id": 5,
@@ -43,7 +46,7 @@
         "username": "",
         "password": ""
       },
-      "expected_result": ""
+      "expected_result": "Please fill out Username and Password."
     },
     {
       "id": 6,
@@ -52,7 +55,7 @@
         "username": "",
         "password": "SomePassword"
       },
-      "expected_result": ""
+      "expected_result": "Please fill out Username"
     },
     {
       "id": 7,
@@ -61,7 +64,7 @@
         "username": "SomeUser",
         "password": ""
       },
-      "expected_result": ""
+      "expected_result": "Please fill out Password."
     }
   ]
-},
+}

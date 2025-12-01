@@ -4,19 +4,20 @@ from Utils.browsersutils import BrowserUtils
 class login_modal_class(BrowserUtils):
     def __init__(self, driver):
         super().__init__(driver)
-        self.nav_login_button = (By.LINK_TEXT, "Sign up")
-        self.modal_heading = (By.XPATH, "//*[@id='signInModalLabel']")
-        self.field_username = (By.ID, "sign-username")
-        self.field_password = (By.ID, "sign-password")
-        self.login_close_button = (By.XPATH, "//*[@id='signInModal']/div/div/div[3]/button[1]")
-        self.login_button = (By.CSS_SELECTOR, "button.btn-primary[onclick='register()']")
-        #self.logout_button = 
+        self.nav_login_button = (By.LINK_TEXT, "Log in")
+        self.modal_heading = (By.XPATH, "//*[@id='logInModalLabel']")
+        self.field_username = (By.ID, "loginusername")
+        self.field_password = (By.ID, "loginpassword")
+        self.login_close_button = (By.XPATH, "//*[@id='logInModal']/div/div/div[3]/button[1]")
+        self.login_button = (By.CSS_SELECTOR, "button.btn-primary[onclick='logIn()']")
+        self.logout_button = (By.LINK_TEXT, "Log out")
+        self.welcome_msg = (By.ID, "nameofuser")
 
     #UI test cases of login page
     def login_modal(self):
         self.button_clicking(self.nav_login_button)
     
-    def get__login_modal_heading(self):
+    def get_login_modal_heading(self):
         return self.get_text(self.modal_heading)
         
     def login_field_visible(self):
@@ -27,21 +28,22 @@ class login_modal_class(BrowserUtils):
   
   
   #functional test cases of login page
-    def valid_login__username(self, username):
+    def valid_login_username(self, username):
         self.clear_field(self.field_username)
         self.send_keys(self.field_username,username)
 
     def valid_login_password(self, password):
         self.clear_field(self.field_password)
         self.send_keys(self.field_password,password)
-
-    def form_reset_validation(self):
-        return self.driver.find_element(*self.field_username).get_attribute("value") and self.driver.find_element(*self.field_password).get_attribute("value")
        
     def password_masking_check(self):
-        return self.driver.find_element(*self.field_password).get_attribute("type") == "pssword"
+        return self.driver.find_element(*self.field_password).get_attribute("type") == "password"
        
-       
+    def get_welcome_message(self):
+        return self.get_text(self.welcome_msg)
+
+
+
         
        
         

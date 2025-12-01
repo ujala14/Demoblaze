@@ -9,10 +9,10 @@ class BrowserUtils:
     def getTitle(self):
         return self.driver.title
     
-    def wait_for_element(self, locator, timeout=15):
+    def wait_for_element(self, locator, timeout=10):
         return WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located(locator))
     
-    def wait_for_alert(self, timeout=10):
+    def wait_for_alert(self, timeout=15):
         return WebDriverWait(self.driver, timeout).until(EC.alert_is_present())
 
     def take_screenshot(self, filename=None):
@@ -29,10 +29,10 @@ class BrowserUtils:
     def send_keys(self, locator, text, timeout=10):
         WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located(locator)).send_keys(text)
 
-    def get_text(self, locator, timeout=10):
+    def get_text(self, locator, timeout=15):
         return WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located(locator)).text
 
-    def is_visible(self, locator, timeout=5):
+    def is_visible(self, locator, timeout=10):
         try:
             WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located(locator))
             return True
